@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeu du Pendu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jeu du Pendu</h1>
+        <p>Devinez le mot caché</p>
+
+            <svg id="dessin-pendu" viewBox=" 0 0 200 200">
+                <!-- Base -->
+                <line x1="50" y1="180" x2="150" y2="180" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                <!-- Poteau vertical -->
+                <line x1="100" y1="180" x2="100" y2="50" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                <!-- Poteau horizontal -->
+                <line x1="100" y1="50" x2="150" y2="50" stroke="black" stroke-width="5" stroke-linecap="round"/>
+                
+                <!-- Renforcement angle -->
+                <line x1="100" y1="70" x2="120" y2="50" stroke="black" stroke-width="5" stroke-linecap="round"/>
+
+                <!-- Corde -->
+                <line x1="150" y1="50" x2="150" y2="80" stroke="black" stroke-width="5" stroke-linecap="round"/>
+
+                <!-- Parties du corps (cachées par défaut) -->
+
+                 <!--Tête-->
+                <circle id="tete" cx="150" cy="95" r="15" stroke="black" stroke-width="3" fill="none" style="display:none;"/>
+
+                <!-- Yeux (2 croix) -->
+                <line id="oeil-gauche-1" x1="140" y1="90" x2="145" y2="95" stroke="black" stroke-width="2" stroke-linecap="round" style="display:none;"/>
+                <line id="oeil-gauche-2" x1="145" y1="90" x2="140" y2="95" stroke="black" stroke-width="2" stroke-linecap="round" style="display:none;"/>
+                <line id="oeil-droit-1" x1="155" y1="90" x2="160" y2="95" stroke="black" stroke-width="2" stroke-linecap="round" style="display:none;"/>
+                <line id="oeil-droit-2" x1="160" y1="90" x2="155" y2="95" stroke="black" stroke-width="2" stroke-linecap="round" style="display:none;"/>
+
+                <!-- Corps bras et jambes -->
+                <line id="corps" x1="150" y1="110" x2="150" y2="140" stroke="black" stroke-width="3" stroke-linecap="round" style="display:none;"/>
+                <line id="bras-gauche" x1="150" y1="120" x2="130" y2="110" stroke="black" stroke-width="3" stroke-linecap="round" style="display:none;"/>
+                <line id="bras-droit" x1="150" y1="120" x2="170" y2="110" stroke="black" stroke-width="3" stroke-linecap="round" style="display:none;"/>
+                <line id="jambe-gauche" x1="150" y1="140" x2="130" y2="160" stroke="black" stroke-width="3" stroke-linecap="round" style="display:none;"/>
+                <line id="jambe-droite" x1="150" y1="140" x2="170" y2="160" stroke="black" stroke-width="3" stroke-linecap="round" style="display:none;"/>
+            </svg>
+
+        <div id="affichage-mot"></div>
+        <div id="tentatives"></div>
+        <div id="message-fin" class="cache"></div>
+        
+        <div id="zone-jeu">
+            <input type="text" id="entree-mot" placeholder="Proposez un mot">
+            <button onclick="verifierMotComplet()">Vérifier le mot</button>
+            
+            <div id="clavier"></div>
+        </div>
+
+        <div id="zone-rejouer" class="cache">
+            <button onclick="recommencerPartie()">Rejouer</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

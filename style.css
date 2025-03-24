@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color:#8593AE;
+}
+
+.container {
+    text-align: center;
+    background-color: #DDA288;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#affichage-mot {
+    font-size: 2em;
+    letter-spacing: 10px;
+    margin-bottom: 20px;
+    
+}
+
+#clavier {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.touche {
+    padding: 10px;
+    background-color: #7E675E;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.touche:hover {
+    background-color: #ddd;
+}
+
+.touche.correct {
+    background-color: green;
+    color: white;
+}
+
+.touche.incorrect {
+    background-color: red;
+    color: white;
+}
+
+#entree-mot {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+#dessin-pendu {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+#message-fin {
+    font-size: 1.2em;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+#zone-rejouer {
+    margin-top: 20px;
+}
+
+#zone-jeu button {
+    cursor: pointer;
+}
+
+#zone-rejouer button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+}
+
+#zone-rejouer button:hover {
+    background-color: #45a049;
+}
+
+.cache {
+    display: none;
+}
+
